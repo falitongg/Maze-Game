@@ -20,6 +20,13 @@ std::pair<int, int> Maze::getExitCoordinates() const {
     return exitCoordinates;
 }
 
+char Maze::getCell(int x, int y) const {
+    if (isInMazeBounds(x, y)) {
+        return maze[y][x];
+    }
+    return '#';     //default return
+}
+
 void Maze::setSize(int width, int height) {
     size = std::make_pair(width, height);
     maze.resize(size.second, std::vector<char>(size.first, '#'));

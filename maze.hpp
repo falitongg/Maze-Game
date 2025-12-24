@@ -41,6 +41,14 @@ class Maze {
          * @return A pair containing x and y coordinates of the exit
          */
         std::pair<int, int> getExitCoordinates() const;
+
+        /**
+         * @brief Gets a cell value at the specified position
+         * @param x X-coordinate
+         * @param y Y-coordinate
+         * @return
+         */
+        char getCell(int x, int y) const;
     //setters
         void setSize(int width, int height);
         void setExitCoordinates(int x, int y);
