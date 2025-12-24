@@ -5,6 +5,7 @@
 #ifndef CPPSEMESTRALPRJCT_PLAYER_HPP
 #define CPPSEMESTRALPRJCT_PLAYER_HPP
 #include <utility>
+#include "maze.hpp"
 
 class Player {
     private:
