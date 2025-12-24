@@ -4,6 +4,7 @@
 #include "game.hpp"
 
 #include <iostream>
+#include <conio.h>
 
 Game::Game() : isRunning(false) {
 }
@@ -25,12 +26,15 @@ void Game::initialize() {
 }
 
 void Game::handleInput() {
-    char input;
-    std::cin >> input;
+    char input = _getch();
+    // std::cin >> _getch();
 
     if (input == 'q' || input == 'Q') {
         isRunning = false;
-    } else {
+    } else if (input == 'h') {
+        renderer.showTutorial();
+    }
+    else {
         player.go(input, maze);
     }
 }
