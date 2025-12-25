@@ -36,8 +36,15 @@ void Game::handleInput() {
     if (input == 'q' || input == 'Q') {
         std::cout << "Quitting! Bye!" << std::endl;
         isRunning = false;
-    } else if (input == 'h') {
-        renderer.showTutorial();
+    } else if (input == 'h' || input == 'H') {
+        char tutorialInput = renderer.showTutorial();
+
+        while (std::cin.get() != '\n');
+
+        if (tutorialInput == 'q' || tutorialInput == 'Q') {
+            std::cout << "Quitting! Bye!" << std::endl;
+            isRunning = false;
+        }
     }
     else {
         player.go(input, maze);
