@@ -4,7 +4,6 @@ project(cppsemestralprjct)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(cppsemestralprjct main.cpp
-        main.cpp
         maze.hpp
         maze.cpp
         player.hpp
@@ -13,6 +12,7 @@ add_executable(cppsemestralprjct main.cpp
         renderer.cpp
         game.hpp
         game.cpp
-        # generator.hpp
-        # generator.cpp
+        generator.hpp
+        helper.cpp
+        helper.hpp
 )
