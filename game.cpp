@@ -4,7 +4,6 @@
 #include "game.hpp"
 
 #include <iostream>
-#include <conio.h>
 
 Game::Game() : isRunning(false) {
 }
@@ -26,10 +25,11 @@ void Game::initialize() {
 }
 
 void Game::handleInput() {
-    char input = _getch();
-    // std::cin >> _getch();
+    char input;
+    std::cin >> input;
 
     if (input == 'q' || input == 'Q') {
+        std::cout << "Quitting! Bye!" << std::endl;
         isRunning = false;
     } else if (input == 'h') {
         renderer.showTutorial();
