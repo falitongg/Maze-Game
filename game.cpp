@@ -28,6 +28,9 @@ void Game::handleInput() {
     char input;
     std::cin >> input;
 
+    //uses only the first symbol entered
+    while (std::cin.get() != '\n');
+
     if (input == 'q' || input == 'Q') {
         std::cout << "Quitting! Bye!" << std::endl;
         isRunning = false;
