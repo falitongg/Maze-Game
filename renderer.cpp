@@ -3,9 +3,11 @@
 //
 
 #include "renderer.hpp"
+#include "helper.hpp"
 
 #include <iostream>
 #include <ostream>
+
 
 Renderer::Renderer() {
 }
@@ -26,10 +28,10 @@ void Renderer::draw(const Maze &maze, const Player &player) const {
 }
 
 void Renderer::showTutorial() const {
-    std::cout << "Player's position: '@'";
-    std::cout << "Controls: W/A/S/D - move, Q - quit\n";
-    std::cout << "Reach the exit 'E' to win!\n\n";
+    clearScreen();
+    printHelp();
 
+    std::cout << "Press any key to continue...\n";
 }
 
 
