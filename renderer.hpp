@@ -23,7 +23,7 @@ class Renderer {
         Renderer();
         void draw(const Maze& maze, const Player& player) const;
 
-        void showTutorial() const;
+        char showTutorial() const;
 };
 
 #endif //CPPSEMESTRALPRJCT_RENDERER_HPP
