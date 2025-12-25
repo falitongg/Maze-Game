@@ -6,8 +6,6 @@
 #include "helper.hpp"
 
 #include <iostream>
-#include <ostream>
-
 
 Renderer::Renderer() {
 }

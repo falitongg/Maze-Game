@@ -2,6 +2,8 @@
 // Created by антін on 24/12/2025.
 //
 #include "game.hpp"
+#include "player.hpp"
+#include "renderer.hpp"
 
 #include <iostream>
 

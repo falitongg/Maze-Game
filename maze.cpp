@@ -3,6 +3,8 @@
 //
 
 #include "maze.hpp"
+#include <utility>
+#include <vector>
 
 Maze::Maze() : size(50, 50) {
     maze.resize(size.second, std::vector<char>(size.first, '#'));

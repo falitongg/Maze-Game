@@ -4,6 +4,7 @@
 
 #include "player.hpp"
 #include "maze.hpp"
+#include <utility>
 
 Player::Player() : currentPosition(std::make_pair(0, 0)) {
 }
