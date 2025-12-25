@@ -4,7 +4,9 @@
 
 #ifndef CPPSEMESTRALPRJCT_RENDERER_HPP
 #define CPPSEMESTRALPRJCT_RENDERER_HPP
-#include <cstdlib>
+#define ANSI_CLEAR  "\x1B[2J\x1B[H"
+
+#include <iostream>
 
 #include "maze.hpp"
 #include "player.hpp"
@@ -15,15 +17,12 @@ class Renderer {
          * @brief Clears screen
          */
         void clearScreen() const {
-            #ifdef _WIN32
-            std::system("cls");
-            #else
-                system("clear");
-            #endif
+            std::cout << ANSI_CLEAR <<std::flush;
         }
     public:
         Renderer();
         void draw(const Maze& maze, const Player& player) const;
+
         void showTutorial() const;
 };
 
