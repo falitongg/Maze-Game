@@ -19,8 +19,6 @@ class Player {
         int getY() const;
         std::pair<int, int> getCurrentPosition() const;
     //setters
-        void setX(int x);
-        void setY(int y);
         void setCurrentPosition(int x, int y);
     //go function
         void go(char direction, const Maze& maze);
