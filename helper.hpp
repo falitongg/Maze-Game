@@ -1,0 +1,12 @@
+//
+// Created by антін on 25/12/2025.
+//
+
+#ifndef CPPSEMESTRALPRJCT_HELPER_HPP
+#define CPPSEMESTRALPRJCT_HELPER_HPP
+
+
+void printHelp();
+
+
+#endif //CPPSEMESTRALPRJCT_HELPER_HPP
