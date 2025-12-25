@@ -31,7 +31,8 @@ void Renderer::showTutorial() const {
     clearScreen();
     printHelp();
 
-    std::cout << "Press any key to continue...\n";
+    std::cout << "Press Enter to continue...\n";
+    std::cin.get();
 }
 
 
