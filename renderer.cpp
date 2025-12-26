@@ -25,13 +25,12 @@ void Renderer::draw(const Maze &maze, const Player &player) const {
     }
 }
 
-char Renderer::showTutorial() const {
+void Renderer::showTutorial() const {
     clearScreen();
     printHelp();
 
     std::cout << "Press Enter to continue...\n";
-    char input = std::cin.get();
-    return input;
+    std::cin.get();
 }
 
 
