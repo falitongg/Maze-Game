@@ -2,8 +2,15 @@
 // Created by антін on 25/12/2025.
 //
 
-#include "helper.hpp"
+/**
+ * @file helper.cpp
+ * @brief Implementation of small helper utilities for the game.
+ *
+ * Currently, contains only the printHelp() function that prints a brief
+ * description of controls and the game goal.
+ */
 
+#include "helper.hpp"
 #include <iostream>
 
 void printHelp() {

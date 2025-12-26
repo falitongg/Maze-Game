@@ -1,6 +1,14 @@
 //
 // Created by антін on 24/12/2025.
 //
+
+/**
+ * @file game.cpp
+ * @brief Implementation of the Game class and helper menu functions.
+ *
+ * Contains the main game loop, initialization logic (including maze size
+ * selection) and simple text-based user interface helpers.
+ */
 #include "game.hpp"
 #include "player.hpp"
 #include "renderer.hpp"
@@ -10,6 +18,19 @@
 Game::Game() : isRunning(false) {
 }
 
+/**
+ * @brief Displays the start menu and reads maze size preset choice.
+ *
+ * Prints a welcome message and four options for maze size:
+ *  - 1: small preset,
+ *  - 2: medium preset,
+ *  - 3: large preset,
+ *  - 4: custom dimensions entered by the user.
+ *
+ * The function keeps asking until the user enters a digit between '1' and '4'.
+ *
+ * @return Character representing the chosen option ('1'–'4').
+ */
 char helloFunction() {
     std::cout << "Welcome to the game!\n";
     std::cout << "Choose preferred maze size :\n [1] - SMALL(31x15)\n [2] - MEDIUM(51x21)\n [3] - LARGE(101x21)\n [4] - custom size \n";
@@ -20,7 +41,7 @@ char helloFunction() {
 
     while (true) {
         input = std::cin.get();
-        while (std::cin.get() != '\n');
+        while (std::cin.get() != '\n');   // discard rest of the line
         if (input == '1' || input == '2' || input == '3' || input == '4') {
             break;
         }
@@ -31,6 +52,20 @@ char helloFunction() {
     return input;
 }
 
+/**
+ * @brief Asks the user for custom maze dimensions and validates them.
+ *
+ * The function prompts the user to enter width and height, checks that:
+ *  - both values are integers,
+ *  - both are at least 11,
+ *  - both are less than 100,
+ *  - the maze is not an extremely large square (to keep it playable),
+ * and then adjusts them to be odd numbers (required by the generator).
+ *
+ * The input is requested repeatedly until valid dimensions are provided.
+ *
+ * @return Pair (width, height) of validated, odd maze dimensions.
+ */
 std::pair<int, int> customChoice() {
     std::cin.clear();
 
@@ -49,13 +84,14 @@ std::pair<int, int> customChoice() {
         bool hugeSquare = (width == height && width >= 60);
 
         if (std::cin.fail()) {
-            // if user didnt enter int
+            // user did not enter an integer
             std::cin.clear();
-            std::cin.ignore(10000, '\n');  // clears garbage
+            std::cin.ignore(10000, '\n');  // clear garbage
             std::cout << "Invalid input. Please enter positive integers.\n";
             continue;
         }
 
+        // make sure dimensions are odd for the backtracking generator
         if (tooWide || tooHigh || hugeSquare) {
             std::cout << "Too large size. Try smaller values.\n";
             continue;
@@ -144,7 +180,6 @@ void Game::update() {
 void Game::render() const {
     renderer.draw(maze, player);
 }
-
 
 void Game::run() {
     while (isRunning) {
