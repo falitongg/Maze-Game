@@ -4,22 +4,25 @@
 #include "game.hpp"
 #include "player.hpp"
 #include "renderer.hpp"
-
+#include "generator.hpp"
 #include <iostream>
 
 Game::Game() : isRunning(false) {
 }
 
 void Game::initialize() {
-    maze = Maze(10,10);
+    maze = Maze(91,21);
+    generator = Generator();
 
-    for (int i = 1; i < 9; i++) {
-        maze.setCell(i, 1, '.');  // horizontal corridor
-        maze.setCell(8, i, '.');  // vertical corridor
-    }
+    // for (int i = 1; i < 9; i++) {
+    //     maze.setCell(i, 1, '.');  // horizontal corridor
+    //     maze.setCell(8, i, '.');  // vertical corridor
+    // }
+    //
+    // maze.setExitCoordinates(8, 8);
+    // maze.setCell(8, 8, 'E');
 
-    maze.setExitCoordinates(8, 8);
-    maze.setCell(8, 8, 'E');
+    generator.generate(maze, 1, 1);
 
     player = Player(1, 1);
 
@@ -37,14 +40,7 @@ void Game::handleInput() {
         std::cout << "Quitting! Bye!" << std::endl;
         isRunning = false;
     } else if (input == 'h' || input == 'H') {
-        char tutorialInput = renderer.showTutorial();
-
-        while (std::cin.get() != '\n');
-
-        if (tutorialInput == 'q' || tutorialInput == 'Q') {
-            std::cout << "Quitting! Bye!" << std::endl;
-            isRunning = false;
-        }
+        renderer.showTutorial();
     }
     else {
         player.go(input, maze);

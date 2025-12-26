@@ -4,6 +4,7 @@
 
 #ifndef CPPSEMESTRALPRJCT_GAME_HPP
 #define CPPSEMESTRALPRJCT_GAME_HPP
+#include "generator.hpp"
 #include "maze.hpp"
 #include "player.hpp"
 #include "renderer.hpp"
@@ -11,6 +12,7 @@
 class Game {
     private:
         Maze maze;
+        Generator generator;
         Player player;
         Renderer renderer;
         bool isRunning;
