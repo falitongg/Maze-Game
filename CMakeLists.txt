@@ -15,4 +15,5 @@ add_executable(cppsemestralprjct main.cpp
         generator.hpp
         helper.cpp
         helper.hpp
+        generator.cpp
 )
