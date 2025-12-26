@@ -14,12 +14,20 @@ char helloFunction() {
     std::cout << "Welcome to the game!\n";
     std::cout << "Choose preferred maze size :\n [1] - SMALL(31x15)\n [2] - MEDIUM(51x21)\n [3] - LARGE(101x21)\n [4] - custom size \n";
     std::cout << "Press H to show tutorial\n";
-    std::cout << "Press Enter to continue...\n";
-    char input = std::cin.get();
-    while (input != '1' && input != '2' && input != '3' && input != '4') {
-        std::cout << "CHOOSE IT NOW\n";
+    std::cout << "Press number 1-4 and press Enter...\n";
+
+    char input;
+
+    while (true) {
         input = std::cin.get();
+        while (std::cin.get() != '\n');
+        if (input == '1' || input == '2' || input == '3' || input == '4') {
+            break;
+        }
+
+        std::cout << "CHOOSE IT NOW\n";
     }
+
     return input;
 }
 
