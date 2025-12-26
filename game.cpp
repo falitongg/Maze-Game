@@ -107,6 +107,9 @@ void Game::initialize() {
     // maze.setCell(8, 8, 'E');
 
     generator.generate(maze, 1, 1);
+    //sets exit at the end
+    maze.setExitCoordinates(width - 2, height - 1);
+    maze.setCell(width - 2, height - 1, 'E');
 
     player = Player(1, 1);
 
