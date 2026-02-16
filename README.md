@@ -9,7 +9,7 @@
 ## 1. Introduction
 
 This project implements a console-based Maze Game in C++. The player moves through a procedurally generated maze with the goal of finding the exit. The maze is generated using a recursive backtracking algorithm.
-[![Watch the video](https://img.youtube.com/vi/lKvjPtktGcE/hqdefault.jpg)](https://www.youtube.com/watch?v=lKvjPtktGcE)
+[![Watch the video](https://img.youtube.com/vi/lKvjPtktGcE/maxresdefault.jpg)](https://www.youtube.com/watch?v=lKvjPtktGcE&t=19s)
 
 ### 1.1 Goal of the Game
 
